@@ -1,0 +1,18 @@
+#include  <stdio.h>
+int yazdir(int x){
+    if(x==0){
+        return 0;
+    }
+    else if(x==1){
+        return 1;
+    }
+    return yazdir(x-1)+ yazdir(x-2);
+}
+int main(){
+    int sayi;
+    printf("Kaca Kadar:");
+    scanf("%d",&sayi);
+    printf("sonuc: %d\n", yazdir(sayi));
+    return 0;
+
+}
