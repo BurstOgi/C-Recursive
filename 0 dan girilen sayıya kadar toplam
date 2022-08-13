@@ -1,0 +1,17 @@
+#include  <stdio.h>
+int yazdir(int x){
+    int temp;
+    if (x<0){
+        return 0;
+    }
+    temp= yazdir(x-1)+x;
+    return temp;
+
+    }
+
+int main(){
+    int sayi;
+    printf("Kaca Kadar:");
+    scanf("%d",&sayi);
+    printf("sonuc: %d", yazdir(sayi));
+}
