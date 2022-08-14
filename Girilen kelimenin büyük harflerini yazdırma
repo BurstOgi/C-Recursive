@@ -2,10 +2,9 @@
 #include <string.h>
 
 int yazdir(char cumle[],char dizi[],int a) {
-
     if (*cumle >= 65 && *cumle <= 90 && a > 0) {
         *dizi =*cumle;
-        printf("Büyük Harfler :%c, ", *dizi);
+        printf("%c, ", *dizi);
         return yazdir(cumle + 1, dizi + 1, a - 1);
     } else {
         return yazdir(cumle + 1, dizi, a - 1);
@@ -19,6 +18,7 @@ int main() {
     printf("cumleyi girin: ");
     gets(cumle);
     yazdir(cumle,dizi, strlen(cumle));
+
 
     return 0;
 }
