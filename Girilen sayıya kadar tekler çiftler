@@ -1,0 +1,33 @@
+#include  <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int fact(int n,int dizi[],int dizi1[]) {
+    if (n==0){
+        return 0;
+    }
+    else if(n%2==1){
+        *dizi=n;
+        dizi++;
+    }
+    else{
+        *dizi1=n;
+        dizi1++;
+    }
+    fact(n-1,dizi,dizi1);
+}
+int main(){
+    int sayi;
+    printf("Kaca kadar: ");
+    scanf("%d",&sayi);
+    int dizi[sayi],dizi1[sayi];
+    fact(sayi,dizi,dizi1);
+    printf("Tekler:  ");
+    for (int i = 0; i < (sayi)/2; i++) {
+        printf("%d  ",dizi[i]);
+    }
+    printf("\n Ciftler:");
+    for (int i = 0; i < (sayi)/2; i++) {
+        printf(" %d ",dizi1[i]);
+    }
+}
