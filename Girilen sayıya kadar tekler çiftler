@@ -4,7 +4,7 @@
 
 int fact(int n,int dizi[],int dizi1[]) {
     if (n==0){
-        return 0;
+        return *dizi1=0;
     }
     else if(n%2==1){
         *dizi=n;
@@ -23,11 +23,11 @@ int main(){
     int dizi[sayi],dizi1[sayi];
     fact(sayi,dizi,dizi1);
     printf("Tekler:  ");
-    for (int i = 0; i < (sayi)/2; i++) {
-        printf("%d  ",dizi[i]);
+    for (int i = (sayi+1)/2-1; i >= 0; i--) {
+        printf(" %d ",dizi[i]);
     }
-    printf("\n Ciftler:");
-    for (int i = 0; i < (sayi)/2; i++) {
+    printf("\n Ciftler: ");
+    for (int i = (sayi)/2; i >= 0; i--) {
         printf(" %d ",dizi1[i]);
     }
 }
