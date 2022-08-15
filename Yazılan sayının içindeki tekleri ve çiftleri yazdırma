@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int yazdir(int sayi,int i,int j) {
+
+    int degisken,cift[100],tek[100];
+        if(sayi%10 != '\0'){
+            degisken = sayi%10;
+            if(degisken %2 == 0){
+                cift[i] = degisken;
+                printf("c: %d \n",cift[i]);
+                i++;
+            }
+            else{
+                tek[j] = degisken;
+                printf("t: %d \n",tek[j]);
+                j++;
+            }
+            return yazdir(sayi/10,i,j);
+        }
+}
+int main() {
+    int sayi,basamak = 0;
+    int *p;
+    printf("sayiyi girin: ");
+    scanf("%d",&sayi);
+    p = &sayi;
+    printf("%d",yazdir(sayi,0,0));
+   return 0;
+}
