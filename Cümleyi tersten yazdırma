@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+char* ters_cevir(char cumle[])
+{
+    static int i=0;
+    static char ters[100];
+    if(*cumle)
+    {
+        ters_cevir(cumle + 1);
+        ters[i++] = *cumle;
+    }
+    return ters;
+}
+
+
+int main()
+{
+
+    char metin[100],*ters;
+
+    printf("Lutfen bir metin giriniz: ");
+    scanf("%s",metin);
+
+    ters = ters_cevir(metin);
+
+    printf("Tersi: %s\n\n",ters);
+    return 0;
+}
